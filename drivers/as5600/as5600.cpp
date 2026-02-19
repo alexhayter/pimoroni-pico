@@ -15,15 +15,15 @@ namespace pimoroni {
       gpio_pull_up(interrupt);
     }
   
-    uint8_t aux_id, revision_id,  hardware_id;
-    get_version(aux_id, revision_id, hardware_id);
+    //uint8_t aux_id, revision_id,  hardware_id;
+    //get_version(aux_id, revision_id, hardware_id);
 
-    if(hardware_id != HARDWARE_ID) {
-      return false;
-    }
+    //if(hardware_id != HARDWARE_ID) {
+    return true;
+    //}
   }
 
-  bool reset();
+  //bool reset();
 
   i2c_inst_t* AS5600::get_i2c() const {
       return i2c->get_i2c();
@@ -46,14 +46,14 @@ namespace pimoroni {
     int ret;
     uint8_t rxdata;
         
-    ret = i2c_read_blocking(_i2c, _address, &rxdata, 1, false);
+    ret = i2c->read_blocking(_address, &rxdata, 1, false);
  
         return (ret >= 0);
   }
 
-  uint8_t AS5600::getAddress() {
-    return _address;
-  }
+  //uint8_t AS5600::getAddress() {
+  //  return _address;
+  //}
 
   /////////////////////////////////////////////////////////
   //
@@ -422,11 +422,11 @@ namespace pimoroni {
   //
 
   uint8_t AS5600::readReg(uint8_t reg){
-    int _error = AS5600_OK;
+    //int _error = AS5600_OK;
     uint8_t data[1];
     // Result byte
-    uint8_t n0 = i2c_write_blocking(_i2c, _address, &reg, 1, true);
-    uint8_t n1 = i2c_read_blocking(_i2c, _address, data, 1, false);
+    uint8_t n0 = i2c->write_blocking(_address, &reg, 1, true);
+    uint8_t n1 = i2c->read_blocking(_address, data, 1, false);
     uint8_t _data=data[0];
     if (n0 != 1)
       {
@@ -442,10 +442,10 @@ namespace pimoroni {
   }
 
   uint16_t AS5600::readReg2(uint8_t reg){
-    int _error = AS5600_OK;
+    //int _error = AS5600_OK;
     uint8_t data[2]; // Result byte
-    uint8_t n1 = i2c_write_blocking(_i2c, _address, &reg, 1, true);
-    uint8_t n2 = i2c_read_blocking(_i2c, _address, data, 2, false);
+    uint8_t n1 = i2c->write_blocking(_address, &reg, 1, true);
+    uint8_t n2 = i2c->read_blocking(_address, data, 2, false);
     uint16_t _data = data[0];
     _data <<= 8;
     _data |= data[1];
@@ -465,7 +465,7 @@ namespace pimoroni {
   uint8_t AS5600::writeReg(uint8_t reg, uint8_t value){
     int _error = AS5600_OK;
     uint8_t buf[] = {reg, value};  // unit8_t buf[0] is register address and buf[1] is unit8_t value
-    uint8_t n1 = i2c_write_blocking(_i2c, _address, buf, 2, false); 
+    uint8_t n1 = i2c->write_blocking(_address, buf, 2, false); 
     sleep_ms(10); // Allow stabilization after waking up
     if (n1 != 1)
       {
@@ -480,7 +480,7 @@ namespace pimoroni {
     buf[0] = reg;
     buf[1] = value & 0xff;
     buf[2] = value >> 8;  // unit8_t buf[0] is register address and buf[1] and buf[2] is unit16_t value
-    uint8_t n3=i2c_write_blocking(_i2c, _address, buf, 3, false); 
+    uint8_t n3=i2c->write_blocking(_address, buf, 3, false); 
     sleep_ms(10); // Allow stabilization after waking up
     if (n3 != 3)
       {

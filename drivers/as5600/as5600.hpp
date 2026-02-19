@@ -15,7 +15,7 @@ namespace pimoroni {
     // Constants
     //--------------------------------------------------
   public:
-    static const uint8_t DEFAULT_I2C_ADDRESS  = 0x36;
+    static const uint8_t DEFAULT_ADDRESS  = 0x36;
 
     //--------------------------------------------------
     // Enums
@@ -37,7 +37,7 @@ namespace pimoroni {
     I2C *i2c;
 
     // interface pins with our standard defaults where appropriate
-    int8_t address    = DEFAULT_I2C_ADDRESS;
+    //int8_t address    = DEFAULT_I2C_ADDRESS;
     uint interrupt    = PIN_UNUSED;
 
     
@@ -57,7 +57,6 @@ namespace pimoroni {
     //--------------------------------------------------
   public:
     bool init();
-    void reset();
     bool isConnected();
 
     // For print access in micropython
@@ -192,18 +191,16 @@ namespace pimoroni {
 
     protected:
     //  made virtual, see #66
-    // virtual uint8_t  readReg(uint8_t reg);
-    // virtual uint16_t readReg2(uint8_t reg);
-    // virtual uint8_t  writeReg(uint8_t reg, uint8_t value);
-    // virtual uint8_t  writeReg2(uint8_t reg, uint16_t value);
+     virtual uint8_t  readReg(uint8_t reg);
+     virtual uint16_t readReg2(uint8_t reg);
+     virtual uint8_t  writeReg(uint8_t reg, uint8_t value);
+     virtual uint8_t  writeReg2(uint8_t reg, uint16_t value);
   
     uint8_t  _address         = DEFAULT_ADDRESS;
     uint8_t  _directionPin    = 255;
     uint8_t  _direction       = CLOCK_WISE;
     int      _error           = AS5600_OK;
-  
-    //TwoWire*  _wire;
-    //i2c_inst_t* _i2c;
+
   
     //  for getAngularSpeed()
     uint32_t _lastMeasurement = 0;
