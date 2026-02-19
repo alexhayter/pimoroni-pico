@@ -15,7 +15,7 @@ using namespace pimoroni;
     as5600.init();
     printf("Init done...\n");
 
- 
+    printf("Connect_0: %s \n",as5600.isConnected()? "true" : "false");
    //);
 
     //printf("Gain: C1: %fx C2: %fx C3: %fx\n", reading.gain(1), reading.gain(2), reading.gain(3));
