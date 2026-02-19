@@ -86,7 +86,7 @@ namespace pimoroni {
     uint16_t getMaxAngle();
 
     // Initialize I2C in class contructor
-    void init(int sdaPort, int sclPort);
+    //void init(int sdaPort, int sclPort);
     //  access the whole configuration register
   //  check datasheet for bit fields
   //  returns false if parameter out of range
