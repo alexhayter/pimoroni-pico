@@ -18,20 +18,20 @@ namespace pimoroni {
         
     private:
         I2C *i2c;
-        uint channels    = 10;
+        //uint channels    = 10;
 
     //---------------------------------------
     //constructor/destructor
     //--------------------------------------
     public:
-        TCA9548A(uint channels=8) : TCA9548A(new I2C(),channels) {};
-        TCA9548A(I2C *i2c, uint channels = 8) : i2c(i2c), channels(channels) {}
+        TCA9548A() : TCA9548A(new I2C()) {};
+        TCA9548A(I2C *i2c) : i2c(i2c) {};
 
     //--------------------------------------------------
     // Method
     //--------------------------------------------------
     public:
-        void tcaselect(uint i);
+        void tcaselect(uint8_t i);
 
   };
 }

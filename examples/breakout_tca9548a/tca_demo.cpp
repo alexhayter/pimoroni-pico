@@ -1,22 +1,23 @@
 #include "pico/stdlib.h"
 #include "common/pimoroni_common.hpp"
 
-#include "as5600.hpp"
+#include "tca9548a.hpp"
+#include <cstdio>
 
 using namespace pimoroni;
 
   I2C i2c(BOARD::SERVO_2040);
-  AS5600 as5600(&i2c);
+  TCA9548A tca9548a(&i2c);
 
   int main() {
     stdio_init_all();
 
-    printf("AS5600 Demo\n");
-    as5600.init();
-    printf("Init done...\n");
+    printf("TCA9548A Demo\n");
+    
 
-    printf("Connect_0: %s \n",as5600.isConnected()? "true" : "false");
-   //);
+    //printf("Connect_0: %s \n",as5600.isConnected()? "true" : "false");
+    tca9548a.tcaselect(1);
+
 
     //printf("Gain: C1: %fx C2: %fx C3: %fx\n", reading.gain(1), reading.gain(2), reading.gain(3));
 

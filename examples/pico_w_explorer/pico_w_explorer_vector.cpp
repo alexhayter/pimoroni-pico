@@ -17,16 +17,19 @@ PicoVector vector(&graphics);
 int main() {
   st7789.set_backlight(255);
 
-  Pen WHITE = graphics.create_pen(255, 255, 255);
-  Pen BLACK = graphics.create_pen(0, 0, 0);
+  //Pen WHITE = graphics.create_pen(255, 255, 255);
+  //Pen BLACK = graphics.create_pen(0, 0, 0);
+  Pen BLUE  = graphics.create_pen(0,0,255);
+  Pen GREEN  = graphics.create_pen(0,255,0);
+
 
   float angle = 0.0f;
 
   while(true) {
-    graphics.set_pen(BLACK);
+    graphics.set_pen(BLUE);
     graphics.clear();
 
-    graphics.set_pen(WHITE);
+    graphics.set_pen(GREEN);
     graphics.text("Hello World", Point(0, 0), 320);
 
     pp_point_t outline[] = {{-128, -128}, {128, -128}, {128, 128}, {-128, 128}};
