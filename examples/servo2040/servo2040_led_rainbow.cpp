@@ -1,5 +1,5 @@
+#include <cstdio>
 #include "pico/stdlib.h"
-
 #include "servo2040.hpp"
 #include "button.hpp"
 
@@ -47,7 +47,7 @@ int main() {
       float hue = (float)i / (float)servo2040::NUM_LEDS;
       led_bar.set_hsv(i, hue + offset, 1.0f, BRIGHTNESS);
     }
-
+    printf("test\n");
     sleep_ms(1000 / UPDATES);
   }
 

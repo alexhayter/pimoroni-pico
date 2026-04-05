@@ -1,5 +1,4 @@
 set(OUTPUT_NAME as5600_demo)
-
 add_executable(
   ${OUTPUT_NAME}
   as5600_demo.cpp

@@ -1,3 +1,4 @@
+include(pico_sdk_import.cmake)
 set(OUTPUT_NAME servo2040_led_rainbow)
 add_executable(${OUTPUT_NAME} servo2040_led_rainbow.cpp)
 

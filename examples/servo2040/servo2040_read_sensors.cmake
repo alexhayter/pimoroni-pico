@@ -1,4 +1,6 @@
+include(pico_sdk_import.cmake)
 set(OUTPUT_NAME servo2040_read_sensors)
+
 add_executable(${OUTPUT_NAME} servo2040_read_sensors.cpp)
 
 target_link_libraries(${OUTPUT_NAME}

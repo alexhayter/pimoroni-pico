@@ -43,12 +43,12 @@ int main() {
     // Read each sensor in turn and print its voltage
     for(auto i = 0u; i < servo2040::NUM_SENSORS; i++) {
       mux.select(servo2040::SENSOR_1_ADDR + i);
-      printf("S%d = %f, ", i + 1, sen_adc.read_voltage());
+     //printf("S%d = %f, ", i + 1, sen_adc.read_voltage());
     }
 
     // Read the voltage sense and print the value
     mux.select(servo2040::VOLTAGE_SENSE_ADDR);
-    printf("Voltage = %f, ", vol_adc.read_voltage());
+    //printf("Voltage = %f, ", vol_adc.read_voltage());
 
     // Read the current sense and print the value
     mux.select(servo2040::CURRENT_SENSE_ADDR);
