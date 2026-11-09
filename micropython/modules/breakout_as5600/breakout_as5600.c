@@ -9,8 +9,9 @@
 // MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_device_type_obj, BreakoutAS7262_device_type);
 // MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_hardware_version_obj, BreakoutAS7262_hardware_version);
 // MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_firmware_version_obj, BreakoutAS7262_firmware_version);
-MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_rawAngle_obj, BreakoutAS5600_rawAngle);
-// MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_temperature_obj, BreakoutAS7262_temperature);
+//MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_read_obj, BreakoutAS5600_read);
+ MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_rawAngle_obj, BreakoutAS5600_rawAngle);
+// MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_temperature_obj, BreakoutAS5600_temperature);
 // MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_gain_obj, BreakoutAS7262_set_gain);
 // MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_measurement_mode_obj, BreakoutAS7262_set_measurement_mode);
 // MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_indicator_current_obj, BreakoutAS7262_set_indicator_current);
@@ -62,7 +63,8 @@ MP_DEFINE_CONST_OBJ_TYPE(
     breakout_as5600_BreakoutAS5600_type,
     MP_QSTR_BreakoutAS5600,
     MP_TYPE_FLAG_NONE,
-    make_new, BreakoutAS5600_make_new,
+    //make_new, BreakoutAS5600_make_new,
+    make_new, BreakoutAS5600_rawAngle,
     locals_dict, (mp_obj_dict_t*)&BreakoutAS5600_locals_dict
 );
 #else
