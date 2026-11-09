@@ -9,7 +9,7 @@
 // MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_device_type_obj, BreakoutAS7262_device_type);
 // MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_hardware_version_obj, BreakoutAS7262_hardware_version);
 // MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_firmware_version_obj, BreakoutAS7262_firmware_version);
-MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_read_obj, BreakoutAS5600_read);
+MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_rawAngle_obj, BreakoutAS5600_rawAngle);
 // MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_temperature_obj, BreakoutAS7262_temperature);
 // MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_gain_obj, BreakoutAS7262_set_gain);
 // MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_measurement_mode_obj, BreakoutAS7262_set_measurement_mode);
@@ -24,7 +24,7 @@ static const mp_rom_map_elem_t BreakoutAS5600_locals_dict_table[] = {
     // { MP_ROM_QSTR(MP_QSTR_device_type), MP_ROM_PTR(&BreakoutAS7262_device_type_obj) },
     // { MP_ROM_QSTR(MP_QSTR_hardware_version), MP_ROM_PTR(&BreakoutAS7262_hardware_version_obj) },
     // { MP_ROM_QSTR(MP_QSTR_firmware_version), MP_ROM_PTR(&BreakoutAS7262_firmware_version_obj) },
-    { MP_ROM_QSTR(MP_QSTR_read), MP_ROM_PTR(&BreakoutAS5600_read_obj) },
+    { MP_ROM_QSTR(MP_QSTR_rawAngle), MP_ROM_PTR(&BreakoutAS5600_rawAngle_obj) },
     // { MP_ROM_QSTR(MP_QSTR_temperature), MP_ROM_PTR(&BreakoutAS5600_temperature_obj) },
 
     // { MP_ROM_QSTR(MP_QSTR_set_gain), MP_ROM_PTR(&BreakoutAS7262_set_gain_obj) },

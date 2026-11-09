@@ -12,21 +12,13 @@ using namespace pimoroni;
     stdio_init_all();
     sleep_ms(3000);
 
-      printf("AS5600 Demo\n");
-      as5600.init();
+    printf("AS5600 Demo\n");
+    as5600.init();
+    printf("Init done...\n");
     while (true) {
-      printf("Init done...\n");
-
-      printf("Connect_0: %s \n",as5600.isConnected()? "true" : "false");
-
-
-  }
-   //);
-
-    //printf("Gain: C1: %fx C2: %fx C3: %fx\n", reading.gain(1), reading.gain(2), reading.gain(3));
-
-    sleep_ms(1000);
-  
+      printf("rawangle: %d \n",as5600.rawAngle());
+      sleep_ms(1000);
+    }
 
     return 0;
   }

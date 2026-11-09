@@ -39,7 +39,7 @@ extern const mp_obj_type_t breakout_as5600_BreakoutAS5600_type;
 // extern mp_obj_t BreakoutAS7262_device_type(mp_obj_t self_in);
 // extern mp_obj_t BreakoutAS7262_hardware_version(mp_obj_t self_in);
 // extern mp_obj_t BreakoutAS7262_firmware_version(mp_obj_t self_in);
-extern mp_obj_t BreakoutAS5600_read(mp_obj_t self_in);
+extern mp_obj_t BreakoutAS5600_rawAngle(mp_obj_t self_in);
 // extern mp_obj_t BreakoutAS7262_temperature(mp_obj_t self_in);
 // extern mp_obj_t BreakoutAS7262_set_gain(mp_obj_t self_in, mp_obj_t value_in);
 // extern mp_obj_t BreakoutAS7262_set_measurement_mode(mp_obj_t self_in, mp_obj_t value_in);

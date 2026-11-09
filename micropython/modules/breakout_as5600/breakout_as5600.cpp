@@ -76,19 +76,17 @@ mp_obj_t BreakoutAS5600_make_new(const mp_obj_type_t *type, size_t n_args, size_
 //     return mp_obj_new_tuple(3, tuple);
 // }
 
-mp_obj_t BreakoutAS5600_read(mp_obj_t self_in) {
+mp_obj_t BreakoutAS5600_rawAngle(mp_obj_t self_in) {
     breakout_as5600_BreakoutAS5600_obj_t *self = MP_OBJ_TO_PTR2(self_in, breakout_as5600_BreakoutAS5600_obj_t);
-    BreakoutAS5600::reading reading = self->breakout->read();
-
-    mp_obj_t tuple[6];
-    tuple[0] = mp_obj_new_float(reading.red);
-    tuple[1] = mp_obj_new_float(reading.orange);
-    tuple[2] = mp_obj_new_float(reading.yellow);
-    tuple[3] = mp_obj_new_float(reading.green);
-    tuple[4] = mp_obj_new_float(reading.blue);
-    tuple[5] = mp_obj_new_float(reading.violet);
-    return mp_obj_new_tuple(6, tuple);
+    return mp_obj_new_int(self->breakout->rawAngle());
 }
+//     tuple[1] = mp_obj_new_float(reading.orange);
+//     tuple[2] = mp_obj_new_float(reading.yellow);
+//     tuple[3] = mp_obj_new_float(reading.green);
+//     tuple[4] = mp_obj_new_float(reading.blue);
+//     tuple[5] = mp_obj_new_float(reading.violet);
+//     return mp_obj_new_tuple(6, tuple);
+// }
 
 // mp_obj_t BreakoutAS5600_temperature(mp_obj_t self_in) {
 //     breakout_as5600_BreakoutAS5600_obj_t *self = MP_OBJ_TO_PTR2(self_in, breakout_as5600_BreakoutAS5600_obj_t);
