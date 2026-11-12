@@ -73,8 +73,8 @@ namespace pimoroni {
   //
   //  CONFIGURATION REGISTERS + direction pin
   //
-  void AS5600::setDirection(uint8_t direction){
-    _direction = direction;
+  void AS5600::setDirection(direction direction){
+    _direction = (uint8_t)direction;
     if (_directionPin != SW_DIRECTION_PIN){
       gpio_init(_directionPin);
       gpio_set_dir(_directionPin, GPIO_OUT);

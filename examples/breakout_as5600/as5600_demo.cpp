@@ -5,7 +5,7 @@
 
 using namespace pimoroni;
 
-  I2C i2c(BOARD::SERVO_2040);
+  I2C i2c(BOARD::BREAKOUT_GARDEN);
   AS5600 as5600(&i2c);
 
   int main() {

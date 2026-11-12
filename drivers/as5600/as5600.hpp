@@ -23,6 +23,10 @@ namespace pimoroni {
     // Enums
     //--------------------------------------------------
   public:
+    enum class direction : uint8_t {
+      cw   = 0,
+      ccw  = 1
+    };
    
 
     //--------------------------------------------------
@@ -70,7 +74,7 @@ namespace pimoroni {
     int get_scl() const;
     int get_int() const;
     
-    void     setDirection(uint8_t direction = CLOCK_WISE);
+    void     setDirection(direction direction );
     uint8_t  getDirection();
    
     uint8_t  getZMCO();

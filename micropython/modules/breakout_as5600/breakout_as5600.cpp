@@ -92,16 +92,21 @@ mp_obj_t BreakoutAS5600_make_new(const mp_obj_type_t *type, size_t n_args, size_
      breakout_as5600_BreakoutAS5600_obj_t *self = MP_OBJ_TO_PTR2(self_in, breakout_as5600_BreakoutAS5600_obj_t);
      return mp_obj_new_int(self->breakout->rawAngle());
  }
+  mp_obj_t BreakoutAS5600_getDirection(mp_obj_t self_in) {
+     breakout_as5600_BreakoutAS5600_obj_t *self = MP_OBJ_TO_PTR2(self_in, breakout_as5600_BreakoutAS5600_obj_t);
+     return mp_obj_new_int(self->breakout->getDirection());
+ }
 
-// mp_obj_t BreakoutAS5600_set_gain(mp_obj_t self_in, mp_obj_t value_in) {
-//     breakout_as5600_BreakoutAS5600_obj_t *self = MP_OBJ_TO_PTR2(self_in, breakout_as5600_BreakoutAS5600_obj_t);
+  mp_obj_t BreakoutAS5600_setDirection(mp_obj_t self_in, mp_obj_t value_in) {
+     breakout_as5600_BreakoutAS5600_obj_t *self = MP_OBJ_TO_PTR2(self_in, breakout_as5600_BreakoutAS5600_obj_t);
 
-//     int value = mp_obj_get_int(value_in) & 3;
+     //int value = mp_obj_get_int(value_in) & 1;
+     int value = mp_obj_get_int(value_in) ;
     
-//     self->breakout->set_gain((BreakoutAS5600::gain)value);
+     self->breakout->setDirection((BreakoutAS5600::direction)value);
 
-//     return mp_const_none;
-// }
+     return mp_const_none;
+ }
 
 // mp_obj_t BreakoutAS5600_set_measurement_mode(mp_obj_t self_in, mp_obj_t value_in) {
 //     breakout_as5600_BreakoutAS5600_obj_t *self = MP_OBJ_TO_PTR2(self_in, breakout_as5600_BreakoutAS5600_obj_t);

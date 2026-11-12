@@ -11,8 +11,8 @@
 // MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS7262_firmware_version_obj, BreakoutAS7262_firmware_version);
 //MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_read_obj, BreakoutAS5600_read);
  MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_rawAngle_obj, BreakoutAS5600_rawAngle);
-// MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_temperature_obj, BreakoutAS5600_temperature);
-// MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_gain_obj, BreakoutAS7262_set_gain);
+ MP_DEFINE_CONST_FUN_OBJ_1(BreakoutAS5600_getDirection_obj, BreakoutAS5600_getDirection);
+ MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS5600_setDirection_obj, BreakoutAS5600_setDirection);
 // MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_measurement_mode_obj, BreakoutAS7262_set_measurement_mode);
 // MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_indicator_current_obj, BreakoutAS7262_set_indicator_current);
 // MP_DEFINE_CONST_FUN_OBJ_2(BreakoutAS7262_set_illumination_current_obj, BreakoutAS7262_set_illumination_current);
@@ -26,16 +26,18 @@ static const mp_rom_map_elem_t BreakoutAS5600_locals_dict_table[] = {
     // { MP_ROM_QSTR(MP_QSTR_hardware_version), MP_ROM_PTR(&BreakoutAS7262_hardware_version_obj) },
     // { MP_ROM_QSTR(MP_QSTR_firmware_version), MP_ROM_PTR(&BreakoutAS7262_firmware_version_obj) },
     { MP_ROM_QSTR(MP_QSTR_rawAngle), MP_ROM_PTR(&BreakoutAS5600_rawAngle_obj) },
+    { MP_ROM_QSTR(MP_QSTR_getDirection), MP_ROM_PTR(&BreakoutAS5600_getDirection_obj) },
     // { MP_ROM_QSTR(MP_QSTR_temperature), MP_ROM_PTR(&BreakoutAS5600_temperature_obj) },
 
-    // { MP_ROM_QSTR(MP_QSTR_set_gain), MP_ROM_PTR(&BreakoutAS7262_set_gain_obj) },
+    { MP_ROM_QSTR(MP_QSTR_setDirection), MP_ROM_PTR(&BreakoutAS5600_setDirection_obj) },
     // { MP_ROM_QSTR(MP_QSTR_set_measurement_mode), MP_ROM_PTR(&BreakoutAS7262_set_measurement_mode_obj) },
     // { MP_ROM_QSTR(MP_QSTR_set_indicator_current), MP_ROM_PTR(&BreakoutAS7262_set_indicator_current_obj) },
     // { MP_ROM_QSTR(MP_QSTR_set_illumination_current), MP_ROM_PTR(&BreakoutAS7262_set_illumination_current_obj) },
     // { MP_ROM_QSTR(MP_QSTR_set_integration_time), MP_ROM_PTR(&BreakoutAS7262_set_integration_time_obj) },
     // { MP_ROM_QSTR(MP_QSTR_set_leds), MP_ROM_PTR(&BreakoutAS7262_set_leds_obj) },
 
-    // { MP_ROM_QSTR(MP_QSTR_X1), MP_ROM_INT(MP_X1) },
+    { MP_ROM_QSTR(MP_QSTR_cw), MP_ROM_INT(MP_cw) },
+    { MP_ROM_QSTR(MP_QSTR_ccw), MP_ROM_INT(MP_ccw) },
     // { MP_ROM_QSTR(MP_QSTR_X3_7), MP_ROM_INT(MP_X3_7) },
     // { MP_ROM_QSTR(MP_QSTR_X16), MP_ROM_INT(MP_X16) },
     // { MP_ROM_QSTR(MP_QSTR_X64), MP_ROM_INT(MP_X64) },
