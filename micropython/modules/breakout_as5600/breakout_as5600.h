@@ -34,7 +34,7 @@
 extern const mp_obj_type_t breakout_as5600_BreakoutAS5600_type;
 
 /***** Extern of Class Methods *****/
-// extern mp_obj_t BreakoutAS7262_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args);
+ extern mp_obj_t BreakoutAS5600_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args);
 // extern mp_obj_t BreakoutAS7262_reset(mp_obj_t self_in);
 // extern mp_obj_t BreakoutAS7262_device_type(mp_obj_t self_in);
 // extern mp_obj_t BreakoutAS7262_hardware_version(mp_obj_t self_in);
