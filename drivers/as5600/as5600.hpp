@@ -42,9 +42,7 @@ namespace pimoroni {
     //int8_t address    = DEFAULT_I2C_ADDRESS;
     uint interrupt    = PIN_UNUSED;
 
-    
-
-
+  
     //--------------------------------------------------
     // Constructors/Destructor
     //--------------------------------------------------
@@ -53,7 +51,12 @@ namespace pimoroni {
 
     AS5600(I2C *i2c, uint interrupt = PIN_UNUSED) : i2c(i2c), interrupt(interrupt) {}
 
-
+    ~AS5600() {
+      if(i2c) {
+        delete i2c;
+        i2c = nullptr;
+      }
+    }
     //--------------------------------------------------
     // Methods
     //--------------------------------------------------
