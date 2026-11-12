@@ -7,7 +7,7 @@
 #include "hardware/gpio.h"
 #include "common/pimoroni_common.hpp"
 #include "common/pimoroni_i2c.hpp"
-#include "as5600_regs.hpp"
+#include "as5600_regs.h"
 
 namespace pimoroni {
 

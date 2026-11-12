@@ -1,4 +1,11 @@
-#pragma once
+#ifndef __AS5600_REGS_H__
+#define __AS5600_REGS_H__
+
+/*! CPP guard */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 
@@ -128,3 +135,8 @@ const uint8_t AGC_MASK				= 0b11111111;
 const uint8_t MAGNITUDE_MASK		= 0b00001111;
 
 }
+#ifdef __cplusplus
+}
+#endif /* End of CPP guard */
+
+#endif /* __AS5600_REGS_H__ */

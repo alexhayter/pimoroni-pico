@@ -63,8 +63,8 @@ MP_DEFINE_CONST_OBJ_TYPE(
     breakout_as5600_BreakoutAS5600_type,
     MP_QSTR_BreakoutAS5600,
     MP_TYPE_FLAG_NONE,
-    //make_new, BreakoutAS5600_make_new,
-    make_new, BreakoutAS5600_rawAngle,
+    make_new, BreakoutAS5600_make_new,
+    //make_new, BreakoutAS5600_rawAngle,
     locals_dict, (mp_obj_dict_t*)&BreakoutAS5600_locals_dict
 );
 #else
