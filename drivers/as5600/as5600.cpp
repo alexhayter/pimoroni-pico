@@ -1,3 +1,17 @@
+//This is a C++ source file for the AS5600 driver, 
+//which has been added to part of the 
+//Pimoroni library. The AS5600 is a magnetic rotary encoder that 
+//ommunicates over I2C. The code defines the 
+//S5600 class and implements various methods to interact with the device, 
+//including initialization, reading and writing registers, and 
+//configuring settings.
+//
+//The code is based on a port of the arduino library for the AS5600 
+//written by Rob Tillaart, (see license for details).
+//
+//It includes methods for reading the raw angle, 
+//calculating angular speed, and managing cumulative position.
+
 #include <cstdlib>
 #include <math.h>
 #include <map>
